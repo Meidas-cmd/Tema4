@@ -61,6 +61,7 @@ public class Bateria1_T4_metodos {
         System.out.println("2. Mbappe");
         System.out.println("3. yamal");
         System.out.println("X. Salir");
+       String jorge_parguela;
 
     }
     public static boolean validar(String opcion){
