@@ -82,7 +82,7 @@ public class Proyecto_Bonito {
         return campo;
     }
 
-
+//hola
     /**
      * @author Jorge Cuartero Giner
      * @param campo - matriz del campo de minas en este caso
