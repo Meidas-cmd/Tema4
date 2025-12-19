@@ -6,6 +6,9 @@ public class Proyecto_Bonito {
     static java.util.Scanner entrada;
     public static void main(String[] args){
         entrada = new java.util.Scanner(System.in);
+        System.out.println("******************");
+        System.out.println("-Bienvenido al Reto del Campo deminas-");
+        System.out.println("******************");
         System.out.println("Introduce el alto del campo de minas: ");
         int alto = entradaInt();
         System.out.println("Introduce el ancho del campo de minas: ");
