@@ -95,7 +95,17 @@ public class Bateria_Recursividad {
                 System.out.println(cinco(num,""));
                 break;
             case 6:
-
+                System.out.println("Dime una palabra y te digo si esta ordenada:");
+                String resp6= entrada.next();
+                if (seis(resp6)){
+                    System.out.println("Si esta ordenado.");
+                }else {
+                    System.out.println("No esta ordenado.");
+                }
+                
+                minimenu();
+                opc2 = entrada.next();
+                opcionesminimenu(opc2);
                 break;
             case 7:
                 System.out.println("Hasta que numero quieres que sume:");
@@ -187,10 +197,16 @@ public class Bateria_Recursividad {
         }
     }
 
-
-//    public static boolean seis(char palabra){
-//
-//    }
+    public static boolean seis(String palabra) {
+        if (palabra.length() <= 1) {
+            return true;
+        }
+        if (palabra.charAt(0) <= palabra.charAt(1)) {
+            return seis(palabra.substring(1));
+        } else {
+            return false;
+        }
+    }
 
     public static void siete(int num,int cont,int resultado){
         if (num > cont){
