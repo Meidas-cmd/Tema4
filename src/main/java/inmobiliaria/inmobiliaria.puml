@@ -1,0 +1,71 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class casa {
+  {static} - entrada : Scanner
+  - direccion : String
+  - listaHabitaciones : ArrayList<Habitacion>
+  - propietario : Propietario
+
+  + casa(direccion : String)
+  + crearHabitacion(nombre : String, metros : double) : void
+  + eliminarHabitacion(nombre : String) : void
+  + mostrarHabitaciones() : void
+  + getHabitacionesMasGrades() : Habitacion
+  + habitacionMasConsume() : Habitacion
+  + getDireccion() : String
+  + setDireccion(direccion : String) : void
+  + getListaHabitaciones() : ArrayList<Habitacion>
+  + setListaHabitaciones(listaHabitaciones : ArrayList<Habitacion>) : void
+  + getPropietario() : Propietario
+  + setPropietario() : void
+  + toString() : String
+}
+
+class Habitacion {
+  - Nombre : String
+  - metros : double
+  - listaElectrodomesticos : ArrayList<Electrodemestico>
+
+  + Habitacion(nombre : String, metros : double)
+  + agregarElctrodomesticos(nombre : String, consumo : double) : void
+  + mostrarElectrodomestico() : void
+  + calcualrConsumo() : double
+  + getNombre() : String
+  + setNombre(nombre : String) : void
+  + getMetros() : double
+  + setMetros(metros : double) : void
+  + getListaElectrodomesticos() : ArrayList<Electrodemestico>
+  + setListaElectrodomesticos(listaElectrodomesticos : ArrayList<Electrodemestico>) : void
+  + toString() : String
+}
+
+class Electrodemestico {
+  - nombre : String
+  - consumo : double
+
+  + Electrodemestico(nombre : String, consumo : double)
+  + getConsumo() : double
+  + setConsumo(consumo : double) : void
+  + getNombre() : String
+  + setNombre(nombre : String) : void
+  + toString() : String
+}
+
+class Propietario {
+  - nombre : String
+  - edad : int
+
+  + Propietario(nombre : String, edad : int)
+  + getNombre() : String
+  + setNombre(nombre : String) : void
+  + getEdad() : int
+  + setEdad(edad : int) : void
+  + toString() : String
+}
+
+casa "1" *-- "0..*" Habitacion : contiene >
+casa "1" *-- "1" Propietario : tiene >
+Habitacion "1" *-- "0..*" Electrodemestico : contiene >
+
+@enduml
